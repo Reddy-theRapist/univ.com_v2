@@ -12,6 +12,7 @@ if (isset($_SESSION["access_token"]) && isset($_SESSION["access_token_secret"]))
         $twitterManager->_user_id=$_COOKIE["user_id"];
         $twitterManager->_screen_name=$_COOKIE["screen_name"];
     }
+//    echo json_encode(array("debug"=>"fag id = " . urldecode($_POST["fagID"])));
     $op_status=$twitterManager->banUsersFollower(urldecode($_POST["fagID"]));
     //TODO проверка header'а в $op_status header'е
     echo json_encode(array("op_status"=>1,"debug"=>$op_status));

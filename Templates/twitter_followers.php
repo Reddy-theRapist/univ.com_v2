@@ -12,7 +12,7 @@
              src="<?= str_replace("_normal.",".",$eblan["profile_image_url"]) ?>" />
         <a href="https://twitter.com/<?=$eblan["screen_name"] ?>" target="_blank"> <span class="label label-default"><?= $eblan["screen_name"]?></span> </a>
         <button type="button" class="btn btn-warning" data-toggle="tooltip" title="Забанить у*бка"
-                onclick="ban_faggot(<?= $eblan["id_str"] ?>, '<?= $eblan["screen_name"]?>') id="bitch_<?=$eblan["screen_name"]?>">
+                onclick="ban_faggot(<?= $eblan["id_str"] ?>, '<?= $eblan["screen_name"]?>')" id="bitch_<?=$eblan["screen_name"]?>">
             /ban
         </button>
         <blockquote>

@@ -1,7 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="ru" >
 <head>
+
+    <link rel="shortcut icon" href="Unity/TemplateData/favicon.ico">
+    <?php if (isset($ActivateUnity)):?>
+        <link rel="stylesheet" href="Unity/TemplateData/style.css">
+        <script src="Unity/TemplateData/UnityProgress.js" ></script>
+        <script src="Unity/Build/UnityLoader.js" ></script>
+        <script>
+            var gameInstance = UnityLoader.instantiate("gameContainer", "Unity/Build/v1.0.json", {onProgress: UnityProgress});
+        </script>
+    <?php endif;?>
+
     <title>the university</title>
 
     <link rel="stylesheet" href="csss/sidebar.css">
@@ -11,8 +21,9 @@
     <link rel="stylesheet" href="csss/main.css">
     <link rel="stylesheet" href="csss/news.css">
     <script src="j-scripts/twitter_actions.js"></script>
-    <link href="images/skating.png" rel="icon" type="image/gif">
-    <meta charset="utf-8" />
+    <script src="j-scripts/aScript.js"></script>
+<!--    <link href="images/skating.png" rel="icon" type="image/gif">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css"/>
@@ -67,6 +78,8 @@
 <!--                            <li><a href="database.php"> 6L </a></li>-->
                         </ul>
                     </li>
+<!--                    <li id="unity"><a href="Unity/index.html" data-toggle="tooltip" title="Ваш браузер завизжит как сучка">Unity3d</a></li>-->
+                    <li id="unity"><a href="unity3d" data-toggle="tooltip" title="Ваш браузер завизжит как сучка">Unity3d</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right ExtendedNav">

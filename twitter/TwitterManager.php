@@ -227,7 +227,7 @@ class TwitterManager
 
     //рефакторинг? ООП? кто все эти люди
     //дублирование одного и того же кода - вот наш девиз
-    public function banUsersFollower($poorGuyID){
+    public function banUsersFollower($poorGuyID) {
         $this->_init_oauth();
 
         $oauth_base_text = "POST&";
@@ -238,7 +238,8 @@ class TwitterManager
         $oauth_base_text .= urlencode('oauth_timestamp='.$this->_oauth['timestamp']."&");
         $oauth_base_text .= urlencode('oauth_token='.$this->_oauth['token']."&");
         $oauth_base_text .= urlencode('oauth_version=1.0&');
-        $oauth_base_text .= urlencode('user_id=' . $poorGuyID);
+        $oauth_base_text.=urlencode('screen_name='.$poorGuyID);
+//        $oauth_base_text .= urlencode('user_id=' . $poorGuyID);
 
         $key = $this->_consumer_secret . '&' . $this->_oauth['token_secret'];
         $signature = base64_encode(hash_hmac("sha1", $oauth_base_text, $key, true));
@@ -250,10 +251,11 @@ class TwitterManager
         $postfields .= '&oauth_timestamp=' . $this->_oauth['timestamp'];
         $postfields .= '&oauth_token=' . urlencode($this->_oauth['token']);
         $postfields .= '&oauth_version=1.0';
-        $postfields .= '&user_id=' . $poorGuyID;
+//        $postfields .= '&user_id=' . $poorGuyID;
+        $postfields .= '&screen_name=' . $poorGuyID;
 
 
-        return Utils::CURL_SEND_REQUEST(Utils::URL_BLOCKS_CREATE,"post",$postfields,true,true);
+        return Utils::CURL_SEND_REQUEST(Utils::URL_BLOCKS_CREATE,"post",$postfields, true, true);
     }
 
     public function getUsersFollowings($user_screenName, $cursor, $count)

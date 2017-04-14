@@ -6,13 +6,14 @@ var theIFRAME;
 
 function initializeShit() {
 	theIFRAME=document.getElementById("hiddenCharacter");
-	theIFRAME.src="https://www.youtube.com/embed/0hTn_f7SR4I?autoplay=0";
+    theIFRAME.src="https://www.youtube.com/embed/0hTn_f7SR4I?autoplay=0";
 	getPageContent('../htmls/main.html','Главная');
 }
 
 function hereComesTheBrekotkin() {
-	// theIFRAME=document.getElementById("hiddenCharacter");
-	toggleVideo(brekotkinInAction);
+	theIFRAME=document.getElementById("hiddenCharacter");
+    theIFRAME.src="https://www.youtube.com/embed/0hTn_f7SR4I?autoplay=0";
+    toggleVideo(brekotkinInAction);
 }
 
 function toggleVideo(state)

@@ -34,7 +34,7 @@ function ban_faggot(faggot_id, screen_name)
             }
     };
 
-    var body = 'fagID=' + encodeURIComponent(faggot_id);
+    var body = 'fagID=' + encodeURIComponent(screen_name);
     console.log("sending body:"+body);
     xmlR.open("POST", "twitter/ban_EventHandler.php",true);
     xmlR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
